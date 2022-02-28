@@ -1,0 +1,41 @@
+#!STORY
+# <Name Your Story>
+# How to edit file
+# 1) R<#> stands for the room
+# 2) Next line is the description of the room
+# 3) ;;; marks the end of the room description
+# 4) : Name of option -> <room number attached to optioin>
+# 5) =) marks the end of the adventure
+
+R1: Room 1 Name
+Room 1 desciption.
+;;;
+: Room 3 -> 3
+: Room 2 (End of Adventure) -> 2
+
+R2: Room 2
+End of Adventure
+;;;
+=)
+
+R3: Room 3
+Room 3 desciption.
+;;;
+: Room 4 -> 4 
+: Room 5 -> 5
+: Room 6 -> 6
+
+R4: Room 4
+End of adventure.
+;;;
+=)
+
+R5: Room 5
+End of adventure.
+;;;
+=)
+
+R6: Room 6
+End of adventure.
+;;;
+=)

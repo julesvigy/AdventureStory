@@ -1,0 +1,2 @@
+javac TestAdventureStory.java
+java TestAdventureStory

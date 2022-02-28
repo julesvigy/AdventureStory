@@ -1,7 +1,6 @@
 #!STORY
 # Goldilocks Choose Your Own Adventure
 # Based on the fairy tale published by Robert Southey
-# Adapted by Marc Renault
 
 R1:Cottage in the Woods
 One beautiful Summer's day, a little girl, named Goldilocks, was taking a walk through the woods. After chasing a butterfly for sometime, she found herself exiting the forest into a clearing in which she had never been before. Nestled in the rolling hills of the clearing was a darling little cottage.

@@ -1,50 +1,14 @@
-//////////////////// ALL ASSIGNMENTS INCLUDE THIS SECTION /////////////////////
-//
 // Title: AdventureStory
 // Files: AdventureStory.java, TestAdventureStory.java
-// Course: CS 200, Spring, 2019
 //
 // Author: Jules Vigy
-// Email: vigy@wisc.edu
-// Lecturer's Name: Marc Renault
-//
-//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ///////////////////
-//
-// Partner Name: name of your pair programming partner
-// Partner Email: email address of your programming partner
-// Lecturer's Name: name of your partner's lecturer
-//
-// VERIFY THE FOLLOWING BY PLACING AN X NEXT TO EACH TRUE STATEMENT:
-// ___ Write-up states that pair programming is allowed for this assignment.
-// ___ We have both read and understand the course Pair Programming Policy.
-// ___ We have registered our team prior to the team registration deadline.
-//
-///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
-//
-// Students who get help from sources other than their partner must fully
-// acknowledge and credit those sources of help here. Instructors and TAs do
-// not need to be credited here, but tutors, friends, relatives, room mates
-// strangers, etc do. If you received no outside help from either type of
-// source, then please explicitly indicate NONE.
-//
-// Persons: NONE
-// Online Sources: NONE
-//
-/////////////////////////////// 80 COLUMNS WIDE ///////////////////////////////
+// Email: jules.vigy@aol.com
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
-/**
- * This class contains a few methods for testing methods in the AdventureStory class as they are
- * developed. These methods are private since they are only intended for use within this class.
- * 
- * @author Marc Renault
- * @author TODO add your name here when you add tests and comment the tests
- *
- */
 public class TestAdventureStory {
 
     /**
@@ -54,18 +18,17 @@ public class TestAdventureStory {
      */
     public static void main(String[] args) {
         // Milestone 1 Tests
-        // testPromptInt();
-        // testPromptChar();
-        // testPromptString();
-        // testGetRoomIndex();
-        // testGetRoomDetails();
+        testPromptInt();
+        testPromptChar();
+        testPromptString();
+        testGetRoomIndex();
+        testGetRoomDetails();
 
         // Milestone 2 Tests
-        // testParseStory();
+        testParseStory();
 
         // Milestone 3 Tests
-        // testprobsTran();
-        testparseBookmark();
+        testprobsTran();
     }
 
     /**
@@ -198,8 +161,6 @@ public class TestAdventureStory {
      */
 
     private static void testParseStory() {
-        boolean error = false;
-
         {
             Scanner testSc = new Scanner("#!STORY\n"
                 + "R1: Room 1\nRoom 1 description\n;;;\n: Transition 1 -> 1\n: Transition 2 -> 2\n"
@@ -300,7 +261,7 @@ public class TestAdventureStory {
                     + Arrays.deepToString(expRooms.toArray()) + "\n");
                 passed = false;
             }
-            // Expected ArrayList of ArrayList of transition details:
+            // Expected ArrayList of ArrayList of transition details
             ArrayList<String[]> room1Trans = new ArrayList<String[]>(Arrays
                 .asList(new String[][] {{"Transition 1", "1", null}, {"Transition 2", "2", null}}));
             ArrayList<String[]> room2Trans =
@@ -334,7 +295,7 @@ public class TestAdventureStory {
             trans.add(str1);
             String checkIt = AdventureStory.probTrans(rand, trans);
             if (checkIt.equals("Yup")) {
-                System.out.println("passed");
+                System.out.println("parseStory 4: passed");
             }
         }
 
@@ -347,39 +308,8 @@ public class TestAdventureStory {
             trans.add(str1);
             String checkIt = AdventureStory.probTrans(rand, trans);
             if (checkIt == null) {
-                System.out.println("passed");
+                System.out.println("parseStory 5: passed");
             }
-        }
-    }
-
-    /**
-     * This test method assumes that the text file Goldilocks.Story exist locally due to the nature of parseBookmark. 
-     */
-    private static void testparseBookmark() {
-        // test one should pass granted the Goldilock.story exist locally.
-        Scanner sc = new Scanner("Goldilocks.story\n 3");
-        ArrayList<String[]> rooms = new ArrayList<String[]>();
-        ArrayList<ArrayList<String[]>> trans = new ArrayList<ArrayList<String[]>>();
-        String[] curRoom = new String[1];
-        boolean returnStatus = AdventureStory.parseBookmark(sc, rooms, trans, curRoom);
-        System.out.print("Test 1: ");
-        if (returnStatus) {
-            System.out.println("Passed");
-        } else {
-            System.out.println("Failed");
-        }
-        // should fail as the file name in Bookmark method is not correct
-        Scanner sc1 = new Scanner("This should fail\n 3");
-        ArrayList<String[]> rooms1 = new ArrayList<String[]>();
-        ArrayList<ArrayList<String[]>> trans1 = new ArrayList<ArrayList<String[]>>();
-        String[] curRoom1 = new String[1];
-        System.out.println("Expected: Error reading file: This should fail");
-        System.out.print("Output: ");
-        boolean returnStatus1 = AdventureStory.parseBookmark(sc1, rooms1, trans1, curRoom1);
-        if (!returnStatus1) {
-            System.out.println("Test 2: Passsed");
-        } else {
-            System.out.println("Test 2: Failed");
         }
     }
 
